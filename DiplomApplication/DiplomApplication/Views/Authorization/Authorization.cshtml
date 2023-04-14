@@ -1,0 +1,23 @@
+﻿@model Users
+@{
+
+    ViewData["Title"] = "Авторизация";
+
+}
+
+<div class="text-center">
+
+    <h1 class="display-4">Авторизация</h1><br>
+    <form method="post" asp-controller="Authorization" asp-action="CheckAuthorization">
+        <label asp-for="Login"></label><br>
+        <input asp-for="Login" /><br>
+        <span asp-validation-for="Login"></span><br>
+
+        <label asp-for="Password"></label><br>
+        <input type="password" asp-for="Password" /><br>
+		<span asp-validation-for="Password"></span><br><br>
+
+        <input type="submit" value="Войти"/>
+    </form><br><br>
+    <p>Если у вас нет акаунта пройдите <a asp-area="" asp-controller="Authorization" asp-action="Registration">регистрацию</a>.</p>
+</div>
