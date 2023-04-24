@@ -1,4 +1,4 @@
-﻿@model Users
+﻿@model UsersRegistration
 @{
 
     ViewData["Title"] = "Регистрация";
@@ -8,18 +8,26 @@
 <div class="text-center">
 
     <h1 class="display-4">Регистрация</h1><br>
-    <form method="post" asp-controller="Users" asp-action="Check">
+    <form method="post" asp-controller="Authorization" asp-action="CheckRegistration">
         <label asp-for="Login"></label><br>
-        <input asp-for="Login" />
-        <span asp-validation-for="Login"></span><br><br>
+        <input asp-for="Login" /><br>
+        <span asp-validation-for="Login"></span><br>
 
         <label asp-for="Password"></label><br>
-        <input type="password" asp-for="Password" />
-        <span asp-validation-for="Password"></span><br><br>
+        <input type="password" asp-for="Password" /><br>
+        <span asp-validation-for="Password"></span><br>
 
-        <label asp-for="Password"></label><br>
-        <input type="password" asp-for="Password" />
-        <span asp-validation-for="Password"></span><br><br>
+        <label asp-for="Password2"></label><br>
+        <input type="password" asp-for="Password2" /><br>
+        <span asp-validation-for="Password2"></span><br>
+
+        <label asp-for="Group"></label><br>
+        <input asp-for="Group" /><br>
+        <span asp-validation-for="Group"></span><br>
+
+        <label asp-for="FIO"></label><br>
+        <input asp-for="FIO" /><br>
+        <span asp-validation-for="FIO"></span><br>
 
         <input type="submit" value="Зарегистрироваться" />
     </form><br><br>

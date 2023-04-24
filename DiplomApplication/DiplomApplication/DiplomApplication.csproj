@@ -14,4 +14,8 @@
     <Content Remove="Views\Authorization\Index.cshtml" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DiplomApp.Data\DiplomApp.Data.csproj" />
+  </ItemGroup>
+
 </Project>

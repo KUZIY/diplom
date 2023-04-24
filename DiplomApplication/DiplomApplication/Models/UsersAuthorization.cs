@@ -2,7 +2,7 @@
 
 namespace DiplomApplication.Models
 {
-    public class Users
+    public class UsersAuthorization
     {
        // public int Id { get; set; }
         [Required(ErrorMessage = "Логин не может быть пустым")]

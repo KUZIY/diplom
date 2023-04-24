@@ -16,18 +16,35 @@ namespace DiplomApplication.Controllers
         }
 
         [HttpPost]
-        public IActionResult CheckAuthorization(Users user)
+        public IActionResult CheckAuthorization(UsersAuthorization user)
         {
             if (ModelState.IsValid)
             {
                 if (user.Login == "admin")
-                    return Redirect("/Home/Admin");
+                    return Redirect("/Admin/Admin");
                 else
                     return Redirect("/Home/Home");
             }
             else
             {
                 return View("Authorization");
+            }
+
+        }
+
+        [HttpPost]
+        public IActionResult CheckRegistration(UsersRegistration user)
+        {
+            if (ModelState.IsValid)
+            {
+                if (user.Login == "admin")
+                    return Redirect("/Admin/Admin");
+                else
+                    return Redirect("/Home/Home");
+            }
+            else
+            {
+                return View("Registration");
             }
 
         }
