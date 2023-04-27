@@ -13,11 +13,6 @@ namespace DiplomApp.Data
             base(options)
         { }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.UseSerialColumns();
-        }
-
         public DbSet<UsersDB> UsersDB { get; set; }
         public DbSet<RatingsDB> RatingsDB { get; set; }
         public DbSet<MessagesDB> MessagesDB { get; set; }

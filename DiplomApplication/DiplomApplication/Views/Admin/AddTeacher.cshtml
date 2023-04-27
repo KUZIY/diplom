@@ -1,0 +1,30 @@
+﻿@model Users
+@{
+
+    ViewData["Title"] = "Добавление преподавателя";
+
+}
+
+<div class="text-center">
+
+    <h1 class="display-4">Регистрация нового преподавателя</h1><br>
+        <form method="post" asp-controller="Admin" asp-action="CheckAddTeacher">
+        <label asp-for="Login"></label><br>
+        <input asp-for="Login" value="@ViewData["Login"]" /><br>
+        <span asp-validation-for="Login"></span><br>
+
+        <label asp-for="Password"></label><br>
+        <input type="password" asp-for="Password" /><br>
+        <span asp-validation-for="Password"></span><br>
+
+        <label asp-for="Password2"></label><br>
+        <input type="password" asp-for="Password2" /><br>
+        <span asp-validation-for="Password2"></span><br>
+
+		<label>@ViewData["Mess"]</label><br>
+        <input type="submit" value="Зарегистрировать" />
+    </form>
+
+    
+
+</div>

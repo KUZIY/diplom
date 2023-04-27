@@ -1,4 +1,4 @@
-﻿@model UsersAuthorization
+﻿@model Users
 @{
 
     ViewData["Title"] = "Авторизация";
@@ -10,7 +10,7 @@
     <h1 class="display-4">Авторизация</h1><br>
     <form method="post" asp-controller="Authorization" asp-action="CheckAuthorization">
         <label asp-for="Login"></label><br>
-        <input asp-for="Login" /><br>
+        <input asp-for="Login" value="@ViewData["Login"]" /><br>
         <span asp-validation-for="Login"></span><br>
 
         <label asp-for="Password"></label><br>

@@ -245,14 +245,6 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "C:\\Users\\Nikita\\Pictures\\diplom\\DiplomApplication\\DiplomApplication\\wwwroot\\logo (1).ico",
-      "PackagePath": "staticwebassets\\logo (1).ico"
-    },
-    {
-      "Id": "C:\\Users\\Nikita\\Pictures\\diplom\\DiplomApplication\\DiplomApplication\\wwwroot\\logo.ico",
-      "PackagePath": "staticwebassets\\logo.ico"
-    },
-    {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.DiplomApplication.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

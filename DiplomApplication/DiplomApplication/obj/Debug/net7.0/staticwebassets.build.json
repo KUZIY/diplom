@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "u0bHgaxIkFsIzx7jQbYHkWc7/Qn/RJUMm6zx7Ak0Kl0=",
+  "Hash": "sLrJtb84tQ/52TllyAgj+D8ACqCe2xXt5OdYKZDmwRY=",
   "Source": "DiplomApplication",
   "BasePath": "_content/DiplomApplication",
   "Mode": "Default",
@@ -1069,40 +1069,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
-    },
-    {
-      "Identity": "C:\\Users\\Nikita\\Pictures\\diplom\\DiplomApplication\\DiplomApplication\\wwwroot\\logo (1).ico",
-      "SourceId": "DiplomApplication",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Nikita\\Pictures\\diplom\\DiplomApplication\\DiplomApplication\\wwwroot\\",
-      "BasePath": "_content/DiplomApplication",
-      "RelativePath": "logo (1).ico",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\logo (1).ico"
-    },
-    {
-      "Identity": "C:\\Users\\Nikita\\Pictures\\diplom\\DiplomApplication\\DiplomApplication\\wwwroot\\logo.ico",
-      "SourceId": "DiplomApplication",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Nikita\\Pictures\\diplom\\DiplomApplication\\DiplomApplication\\wwwroot\\",
-      "BasePath": "_content/DiplomApplication",
-      "RelativePath": "logo.ico",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\logo.ico"
     }
   ]
 }

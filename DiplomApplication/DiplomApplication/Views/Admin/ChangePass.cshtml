@@ -1,0 +1,22 @@
+﻿@model Users
+@{
+
+    ViewData["Title"] = "Смена пароля";
+
+}
+
+<div class="text-center">
+
+    <h1 class="display-4">Смена пароля</h1><br>
+    <label asp-for="OldPassword"></label><br>
+    <input type="password" asp-for="OldPassword" /><br>
+    <span asp-validation-for="OldPassword"></span><br>
+
+    <label asp-for="Password"></label><br>
+    <input type="password" asp-for="Password" /><br>
+    <span asp-validation-for="Password"></span><br>
+
+    <label asp-for="Password2"></label><br>
+    <input type="password" asp-for="Password2" /><br>
+    <span asp-validation-for="Password2"></span><br>
+</div>

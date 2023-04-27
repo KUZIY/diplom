@@ -16,8 +16,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Nikita\Pictures\diplom\DiplomApplication\DiplomApplication
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Nikita/Pictures/diplom/DiplomApplication/DiplomApplication/Views/Admin/AddTeacher.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkVGVhY2hlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Nikita/Pictures/diplom/DiplomApplication/DiplomApplication/Views/Admin/Admin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nikita/Pictures/diplom/DiplomApplication/DiplomApplication/Views/Admin/ChangePass.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2hhbmdlUGFzcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Nikita/Pictures/diplom/DiplomApplication/DiplomApplication/Views/Authorization/Authorization.cshtml]

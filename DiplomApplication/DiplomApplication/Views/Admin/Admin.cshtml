@@ -1,5 +1,22 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model Students
 @{
+
+    ViewData["Title"] = "База данных студентов";
+
 }
+
+<table class="table">
+    <thead>
+        <tr><th>ФИО</th><th>Группа</th><th>Пузырьковая сортировка</th><th>Сортировка выбором</th><th>Сортировка вставками</th><th>Шейкерная сортировка</th><th>Сортировка Шелла</th><th>Быстрая сортировка</th><th>Общее кол-во попыток</th><th>Оценка</th></tr>
+    </thead>
+    <tbody>
+        @*foreach (var person in Model.Students)
+        {
+        @if
+        {
+
+        }
+        <tr><td>@person.Name</td><td>@person.Age</td></tr>
+        }*@
+    </tbody>
+</table>
