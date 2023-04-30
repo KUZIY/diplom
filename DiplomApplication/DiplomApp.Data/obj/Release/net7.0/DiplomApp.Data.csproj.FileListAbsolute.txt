@@ -1,0 +1,14 @@
+C:\Users\Nikita\Pictures\diplom\DiplomApplication\DiplomApp.Data\bin\Release\net7.0\DiplomApp.Data.deps.json
+C:\Users\Nikita\Pictures\diplom\DiplomApplication\DiplomApp.Data\bin\Release\net7.0\DiplomApp.Data.runtimeconfig.json
+C:\Users\Nikita\Pictures\diplom\DiplomApplication\DiplomApp.Data\bin\Release\net7.0\DiplomApp.Data.dll
+C:\Users\Nikita\Pictures\diplom\DiplomApplication\DiplomApp.Data\bin\Release\net7.0\DiplomApp.Data.pdb
+C:\Users\Nikita\Pictures\diplom\DiplomApplication\DiplomApp.Data\obj\Release\net7.0\DiplomApp.Data.csproj.AssemblyReference.cache
+C:\Users\Nikita\Pictures\diplom\DiplomApplication\DiplomApp.Data\obj\Release\net7.0\DiplomApp.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nikita\Pictures\diplom\DiplomApplication\DiplomApp.Data\obj\Release\net7.0\DiplomApp.Data.AssemblyInfoInputs.cache
+C:\Users\Nikita\Pictures\diplom\DiplomApplication\DiplomApp.Data\obj\Release\net7.0\DiplomApp.Data.AssemblyInfo.cs
+C:\Users\Nikita\Pictures\diplom\DiplomApplication\DiplomApp.Data\obj\Release\net7.0\DiplomApp.Data.csproj.CoreCompileInputs.cache
+C:\Users\Nikita\Pictures\diplom\DiplomApplication\DiplomApp.Data\obj\Release\net7.0\DiplomApp.Data.dll
+C:\Users\Nikita\Pictures\diplom\DiplomApplication\DiplomApp.Data\obj\Release\net7.0\refint\DiplomApp.Data.dll
+C:\Users\Nikita\Pictures\diplom\DiplomApplication\DiplomApp.Data\obj\Release\net7.0\DiplomApp.Data.pdb
+C:\Users\Nikita\Pictures\diplom\DiplomApplication\DiplomApp.Data\obj\Release\net7.0\DiplomApp.Data.genruntimeconfig.cache
+C:\Users\Nikita\Pictures\diplom\DiplomApplication\DiplomApp.Data\obj\Release\net7.0\ref\DiplomApp.Data.dll

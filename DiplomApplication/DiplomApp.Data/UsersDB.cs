@@ -18,9 +18,9 @@ namespace DiplomApp.Data
         [Required]
         public string Login { get; set; }
         [Required]
-        public string Password { get; set; }
-        public string FIO { get; set; }
-        public string Group { get; set; }
+        public string? Password { get; set; }
+        public string? FIO { get; set; }
+        public string? Group { get; set; }
         [Required]
         public string Role { get; set; }
     }

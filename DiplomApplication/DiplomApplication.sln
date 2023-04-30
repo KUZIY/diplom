@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiplomApplication", "DiplomApplication\DiplomApplication.csproj", "{7058053F-B911-4BEC-9A72-EAA6BDDF91CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiplomApp.Data", "DiplomApp.Data\DiplomApp.Data.csproj", "{35C8D976-477B-4D37-B612-0250185F2FA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiplomApp.Data", "DiplomApp.Data\DiplomApp.Data.csproj", "{35C8D976-477B-4D37-B612-0250185F2FA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

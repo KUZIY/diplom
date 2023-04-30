@@ -4,19 +4,48 @@
     ViewData["Title"] = "База данных студентов";
 
 }
+<form method="post" asp-controller="Admin" asp-action="Checkpass">
+	<input type="submit" value="Сохранить изменения" />
+	<pre></pre>
+		<select name="nubexSelect" size="1.2" multiple form="nubexForm">
+			<option>ИДБ-19-01</option>
+		<option>ИДБ-19-02</option>
+		<option>ИДБ-19-03</option>
+		<option>ИДБ-19-04</option>
+	</select>
+		<form id="nubexForm" action="do.php">
+				<input type="submit" value="Выбрать группу" />
+			</form>
+	<table class="table">
+		<thead>
+			<tr><th>ФИО</th><th>Группа</th><th>Пузырьковая сортировка</th><th>Сортировка выбором</th><th>Сортировка вставками</th><th>Шейкерная сортировка</th><th>Сортировка Шелла</th><th>Быстрая сортировка</th><th>Общее кол-во попыток</th><th>Оценка</th></tr>
+		</thead>
+		<tbody>
+			@*foreach (var person in Model.Students)
+			{
+			@if
+			{
+        <label asp-for="OldPassword"></label><br>
+        <input type="password" asp-for="OldPassword" /><br>
+        <span asp-validation-for="OldPassword"></span><br>
 
-<table class="table">
-    <thead>
-        <tr><th>ФИО</th><th>Группа</th><th>Пузырьковая сортировка</th><th>Сортировка выбором</th><th>Сортировка вставками</th><th>Шейкерная сортировка</th><th>Сортировка Шелла</th><th>Быстрая сортировка</th><th>Общее кол-во попыток</th><th>Оценка</th></tr>
-    </thead>
-    <tbody>
-        @*foreach (var person in Model.Students)
-        {
-        @if
-        {
+        <label asp-for="Password"></label><br>
+        <input type="password" asp-for="Password" /><br>
+        <span asp-validation-for="Password"></span><br>
 
-        }
-        <tr><td>@person.Name</td><td>@person.Age</td></tr>
-        }*@
-    </tbody>
-</table>
+        <label asp-for="Password2"></label><br>
+        <input type="password" asp-for="Password2" /><br>
+        <span asp-validation-for="Password2"></span><br>
+			}
+			<tr><td>@person.Name</td><td>@person.Age</td></tr>
+			}*@
+		</tbody>
+
+        <label>@ViewData["Mess"]</label><br>
+        
+	</table>
+	
+</form>
+
+
+

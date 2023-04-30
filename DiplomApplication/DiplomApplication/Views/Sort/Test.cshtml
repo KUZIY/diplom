@@ -1,0 +1,23 @@
+﻿@model StrtoSort
+@{
+	ViewData["Title"] = "Сортировка пузырьком";
+}
+
+<div class="text-center">
+	<h1 class="display-4">Сортировка пузырьком</h1>
+</div>
+<form method="post" asp-controller="Sort" asp-action="CheckBibble">
+	<label asp-for="str"></label>
+	<br>
+<textarea asp-for="str"></textarea>
+	<span asp-validation-for="str"></span>
+	<br>
+	<br>
+<textarea>@ViewData["Message"]</textarea>
+	<br />
+	<br />
+	<input type="submit" value="Отправить ответ" />
+</form>
+
+
+

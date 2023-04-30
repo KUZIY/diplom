@@ -6,7 +6,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DiplomApp.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class InitDB : Migration
+    public partial class initDB : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -35,8 +35,8 @@ namespace DiplomApp.Data.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Login = table.Column<string>(type: "text", nullable: false),
                     Password = table.Column<string>(type: "text", nullable: false),
-                    FIO = table.Column<string>(type: "text", nullable: false),
-                    Group = table.Column<string>(type: "text", nullable: false),
+                    FIO = table.Column<string>(type: "text", nullable: true),
+                    Group = table.Column<string>(type: "text", nullable: true),
                     Role = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>

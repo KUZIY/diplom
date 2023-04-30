@@ -101,11 +101,9 @@ namespace DiplomApp.Data.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdUser"));
 
                     b.Property<string>("FIO")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Group")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Login")

@@ -11,8 +11,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DiplomApp.Data.Migrations
 {
     [DbContext(typeof(DiplomDataContext))]
-    [Migration("20230425095731_InitDB")]
-    partial class InitDB
+    [Migration("20230427101535_initDB")]
+    partial class initDB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -104,11 +104,9 @@ namespace DiplomApp.Data.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdUser"));
 
                     b.Property<string>("FIO")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Group")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Login")

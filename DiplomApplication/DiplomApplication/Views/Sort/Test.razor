@@ -1,0 +1,28 @@
+﻿@model StrtoSort
+@{
+	ViewData["Title"] = "Сортировка пузырьком";
+}
+
+<div class="text-center">
+	<h1 class="display-4">Сортровка пузырьком</h1>
+</div>
+<p><span class="letter">С</span>ортировка пузырьком является одним из самых простых методов сортировки. Он проходит по массиву многократно, сравнивая пары соседних элементов и меняя их местами, если они находятся в неправильном порядке. Этот процесс повторяется до тех пор, пока массив не будет отсортирован. Ключевой недостаток этого метода заключается в том, что он имеет квадратичную сложность O(n^2)</p>
+
+<form method="post" asp-controller="Sort" asp-action="CheckBibble">
+	<label asp-for="str"></label>
+	<br>
+<textarea asp-for="str"></textarea>
+	<span asp-validation-for="str"></span>
+	<br>
+	<br>
+
+	<input type="submit" value="Остсортировать" />
+</form>
+<br>
+<br>
+
+<textarea>@ViewData["Message"]</textarea>
+<br />
+<br />
+<input type="submit" value="Пройти тренировочное тестирование" />
+

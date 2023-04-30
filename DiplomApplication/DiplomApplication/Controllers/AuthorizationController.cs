@@ -2,6 +2,7 @@
 using DiplomApplication.Logic;
 using DiplomApplication.Models;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 
 namespace DiplomApplication.Controllers
@@ -15,7 +16,11 @@ namespace DiplomApplication.Controllers
         }
         public IActionResult Authorization()
         {
-            return View();
+			if (HttpContext.Request.Cookies.ContainsKey("Id"))
+			{
+				HttpContext.Response.Cookies.Delete("Id");
+			}
+			return View();
         }
 
         public IActionResult Registration()
@@ -26,13 +31,19 @@ namespace DiplomApplication.Controllers
         [HttpPost]
         public IActionResult CheckAuthorization(Users user)
         {
+            if(HttpContext.Request.Cookies.ContainsKey("Id"))
+            {
+				HttpContext.Response.Cookies.Delete("Id");
+			}
             Validation val = new Validation(DBContext);
             ModelState.Clear();
             foreach (var x in val.CheckAuthorization(user))
                 ModelState.AddModelError(x.Item1, x.Item2);
             if (ModelState.IsValid)
             {
-                if (val.CheckRole(user.Login))
+                HttpContext.Response.Cookies.Append("Id", Convert.ToString(val.GetId(user.Login)));
+			//	Response.Cookies["Id"].Expires = DateTime.Now.AddDays(1);
+				if (val.CheckRole(user.Login))
                     return Redirect("/Home/Home");
                 else
                     return Redirect("/Admin/Admin");

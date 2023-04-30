@@ -17,21 +17,39 @@ namespace DiplomApplication.Controllers
 
 		public IActionResult Admin()
         {
-            return View();
-        }
+			Validation val = new Validation(DBContext);
+			var userId = HttpContext.Request.Cookies["Id"];
+			if ((userId == null)||(val.CheckRole(val.GetLogin(Convert.ToInt32(userId)))))
+				return Redirect("/Authorization/Authorization");
+			else
+				return View();
+		}
 
         public IActionResult ChangePass()
         {
-            return View();
+			Validation val = new Validation(DBContext);
+			var userId = HttpContext.Request.Cookies["Id"];
+			if ((userId == null) || (val.CheckRole(val.GetLogin(Convert.ToInt32(userId)))))
+				return Redirect("/Authorization/Authorization");
+			else
+				return View();
         }
 
         public IActionResult AddTeacher()
         {
-            return View();
+			Validation val = new Validation(DBContext);
+			var userId = HttpContext.Request.Cookies["Id"];
+			if ((userId == null) || (val.CheckRole(val.GetLogin(Convert.ToInt32(userId)))))
+				return Redirect("/Authorization/Authorization");
+			else
+				return View();
         }
         public IActionResult CheckAddTeacher(Users user)
         {
-            Validation val = new Validation(DBContext);
+			Validation val = new Validation(DBContext);
+			var userId = HttpContext.Request.Cookies["Id"];
+			if ((userId == null) || (val.CheckRole(val.GetLogin(Convert.ToInt32(userId)))))
+				return Redirect("/Authorization/Authorization");
             ModelState.Clear();
             foreach (var x in val.CheckTeacherRegistration(user))
                 ModelState.AddModelError(x.Item1, x.Item2);
@@ -47,5 +65,26 @@ namespace DiplomApplication.Controllers
             return View("AddTeacher");
         }
 
-    }
+        public IActionResult Checkpass(Users user)
+        {
+			Validation val = new Validation(DBContext);
+			var userId = HttpContext.Request.Cookies["Id"];
+            user.Login = val.GetLogin(Convert.ToInt32(userId));
+			if ((userId == null) || (val.CheckRole(user.Login)))
+				return Redirect("/Authorization/Authorization");
+            ModelState.Clear();
+            foreach (var x in val.CheckChangePass(user))
+                ModelState.AddModelError(x.Item1, x.Item2);
+            if (ModelState.IsValid)
+            {
+                ViewData["Mess"] = "Пароль успешно изменён.";
+                val.ChangePass(user.Login, user.Password);
+            }
+            return View("ChangePass");
+        }
+        public IActionResult Exit()
+        { 
+            return Redirect("/Authorization/Authorization");  
+        }
+	}
 }

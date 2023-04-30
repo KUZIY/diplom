@@ -1,3 +1,101 @@
+/* _content/DiplomApplication/Views/Admin/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-n95dfotjb8] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-n95dfotjb8] {
+  color: #0077cc;
+}
+
+.btn-primary[b-n95dfotjb8] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-n95dfotjb8], .nav-pills .show > .nav-link[b-n95dfotjb8] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-n95dfotjb8] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-n95dfotjb8] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-n95dfotjb8] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-n95dfotjb8] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-n95dfotjb8] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}
+/* _content/DiplomApplication/Views/Authorization/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-jw7yvnnkz9] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-jw7yvnnkz9] {
+  color: #0077cc;
+}
+
+.btn-primary[b-jw7yvnnkz9] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-jw7yvnnkz9], .nav-pills .show > .nav-link[b-jw7yvnnkz9] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-jw7yvnnkz9] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-jw7yvnnkz9] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-jw7yvnnkz9] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-jw7yvnnkz9] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-jw7yvnnkz9] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}
 /* _content/DiplomApplication/Views/Shared/_Layout.cshtml.rz.scp.css */
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */

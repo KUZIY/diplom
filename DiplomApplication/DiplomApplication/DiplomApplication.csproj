@@ -13,6 +13,8 @@
 
   <ItemGroup>
     <Content Remove="Views\Authorization\Index.cshtml" />
+    <Content Remove="Views\Home\Index.cshtml" />
+    <Content Remove="Views\Sort\Test.razor" />
   </ItemGroup>
 
   <ItemGroup>

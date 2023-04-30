@@ -1,0 +1,26 @@
+﻿@model Users
+@{
+
+    ViewData["Title"] = "Регистрация";
+
+}
+
+<div class="text-center">
+
+    <h1 class="display-4">Редактировать профиль</h1><br>
+    <form method="post" asp-controller="Home" asp-action="ChekAcount">
+        <label asp-for="Login"></label><br>
+        <input asp-for="Login" value="@ViewData["Login"]" /><br>
+        <span asp-validation-for="Login"></span><br>
+
+        <label asp-for="Group"></label><br>
+        <input asp-for="Group" value="@ViewData["Group"]" /><br>
+        <span asp-validation-for="Group"></span><br>
+
+        <label asp-for="FIO"></label><br>
+        <input asp-for="FIO" value="@ViewData["FIO"]" /><br>
+        <span asp-validation-for="FIO"></span><br>
+
+        <input type="submit" value="Внести изменения" />
+    </form><br><br>
+</div>

@@ -42,7 +42,13 @@ namespace DiplomApplication.Controllers
             ViewData["Message"] = "Здесь будет строка после сортировки";
             return View();
         }
-        [HttpPost]
+		public IActionResult Test()
+		{
+			ViewData["Message"] = "Здесь будет строка после сортировки";
+			return View();
+		}
+
+		[HttpPost]
         public IActionResult CheckBibble(StrtoSort st)
         {
 			

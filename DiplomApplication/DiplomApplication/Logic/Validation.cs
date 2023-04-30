@@ -3,6 +3,7 @@ using DiplomApplication.Models;
 using Microsoft.Extensions.Options;
 using System.ComponentModel.DataAnnotations;
 using System.Xml.Linq;
+using XAct;
 using XAct.Users;
 
 namespace DiplomApplication.Logic
@@ -47,16 +48,17 @@ namespace DiplomApplication.Logic
             return Ans;
         }
 
-        public bool CheckFIO(string login)
+        /*public bool CheckFIO(string login)
         {
             bool Ans = false;
             var x = DBContext.UsersDB.Where(x => x.Login == login);
+            DBContext.UsersDB.
             if (x.Count() > 0)
             {
                 Ans = true;
             }
             return Ans;
-        }
+        }*/
 
         public bool CheckGroup(string login)
         {
@@ -69,6 +71,29 @@ namespace DiplomApplication.Logic
             return Ans;
         }
 
+        public int GetId(string log)
+        {
+            //UsersDB x = DBContext.UsersDB.Where(x => x.Login == "admin").FirstOrDefault();
+            var x = DBContext.UsersDB.First(x => x.Login == log);//
+            return x.IdUser;
+        }
+
+		public string GetLogin(int Id)
+        {
+			var x = DBContext.UsersDB.First(x => x.IdUser == Id);//
+            return x.Login;
+        }
+
+		public bool ChangePass(string log, string pass)
+        {
+            bool Ans = false;
+            //UsersDB x = DBContext.UsersDB.Where(x => x.Login == "admin").FirstOrDefault();
+            var x = DBContext.UsersDB.First(x => x.Login == log);//
+            x.Password = PasswordHash.GetHashCode(pass); ;
+
+            DBContext.SaveChanges();
+            return Ans;
+        }
         public bool CreateUser(Users user, string role)
         {
             bool Ans = true;
@@ -160,6 +185,25 @@ namespace DiplomApplication.Logic
             if ((user.Login != null) && (user.Password != null))
                 if (!CheckPassword(user.Login, user.Password))
                     ans.Add(("Password", "Логин или пароль не правильный."));
+            return ans;
+        }
+
+        public List<(string, string)>  CheckChangePass(Users user)
+        {
+            List<(string, string)> ans = new List<(string, string)>();
+
+			if (user.Password == null)
+                ans.Add(("Password", "Пароль не может быть пустым"));
+            if (user.Password2 == null)
+                ans.Add(("Password2", "Пароль не может быть пустым"));
+            if (user.OldPassword == null)
+                ans.Add(("Password", "Пароль не может быть пустым"));
+            else if (CheckPassword(user.Login, user.OldPassword))
+				ans.Add(("OldPassword", "Страый пароль не правильный"));
+            if (user.Password2 != user.Password)
+                ans.Add(("Password2", "Новые пароли не совпадают"));
+            if (user.Password == user.OldPassword)
+                ans.Add(("Password2", "Новый пароль должен отличаться от старого"));
             return ans;
         }
     }
