@@ -1,15 +1,15 @@
-﻿@{
+﻿@model Students 
+@{;
     ViewData["Title"] = "Контрольные работы";
 }
 <h1>@ViewData["Title"]</h1>
 <p>Правила оценивания: тект </p>
-<p>Общее количествопопыток: 3 </p>
-<p>Итоговая оценка: 0</p>
-<a class="nav-link text-dark" asp-area="" asp-controller="Sort" asp-action="Bubble"><h4>Сортировка пузырьком.<input type="checkbox"></h4></a>
-
-<a class="nav-link text-dark" asp-area="" asp-controller="Sort" asp-action="Selection"><h4>Сортировка выбором.<input type="checkbox"></h4></a>
-<a class="nav-link text-dark" asp-area="" asp-controller="Sort" asp-action="Insertion"><h4>Сортировка вставками.<input type="checkbox"></h4></a>
-<a class="nav-link text-dark" asp-area="" asp-controller="Sort" asp-action="Shaker"><h4>Шейкерная сортирока.<input type="checkbox"></h4></a>
-<a class="nav-link text-dark" asp-area="" asp-controller="Sort" asp-action="Shell"><h4>Сортировка Шелла.<input type="checkbox"></h4></a>
-<a class="nav-link text-dark" asp-area="" asp-controller="Sort" asp-action="Quick"><h4>Быстрая сортировка.<input type="checkbox"></h4></a>
+<p>Общее количество попыток: @Model.TotalAttempts </p>
+<p>Итоговая оценка: @Model.Rating</p>
+<a class="nav-link text-dark" asp-area="" asp-controller="Sort" asp-action="Bubble"><h4>Сортировка пузырьком.<input type="checkbox" checked="@Model.BubleMark" disabled="disabled"></a>
+<a class="nav-link text-dark" asp-area="" asp-controller="Sort" asp-action="Selection"><h4>Сортировка выбором.<input type="checkbox" checked="@Model.SelectionMark" disabled="disabled"></h4></a>
+<a class="nav-link text-dark" asp-area="" asp-controller="Sort" asp-action="Insertion"><h4>Сортировка вставками.<input type="checkbox" checked="@Model.InsertionMark" disabled="disabled"></h4></a>
+<a class="nav-link text-dark" asp-area="" asp-controller="Sort" asp-action="Shaker"><h4>Шейкерная сортирока.<input type="checkbox" checked="@Model.ShakerMark" disabled="disabled"></h4></a>
+<a class="nav-link text-dark" asp-area="" asp-controller="Sort" asp-action="Shell"><h4>Сортировка Шелла.<input type="checkbox" checked="@Model.ShellMark" disabled="disabled"></h4></a>
+<a class="nav-link text-dark" asp-area="" asp-controller="Sort" asp-action="Quick"><h4>Быстрая сортировка.<input type="checkbox" checked="@Model.QuickMark" disabled="disabled"></h4></a>
 

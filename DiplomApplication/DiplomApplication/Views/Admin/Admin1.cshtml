@@ -4,18 +4,22 @@
     ViewData["Title"] = "База данных студентов";
 
 }
-<form method="post" asp-controller="Admin" asp-action="Checkpass">
-	<input type="submit" value="Сохранить изменения" />
+@*<form method="post" asp-controller="Admin" asp-action="Checkpass">
 	<pre></pre>
-		<select name="nubexSelect" size="1.2" multiple form="nubexForm">
-			<option>ИДБ-19-01</option>
+	@foreach (var person in Students)
+	{
+	{
+	<select name="nubexSelect" multiple form="nubexForm"> 
+		<option>ИДБ-19-01</option>
 		<option>ИДБ-19-02</option>
 		<option>ИДБ-19-03</option>
 		<option>ИДБ-19-04</option>
 	</select>
-		<form id="nubexForm" action="do.php">
-				<input type="submit" value="Выбрать группу" />
-			</form>
+	<input type="submit" value="Выбрать группу" />
+	</form></br>
+
+<form method="post" asp-controller="Admin" asp-action="Checkpass">
+	<input type="submit" value="Сохранить изменения" />
 	<table class="table">
 		<thead>
 			<tr><th>ФИО</th><th>Группа</th><th>Пузырьковая сортировка</th><th>Сортировка выбором</th><th>Сортировка вставками</th><th>Шейкерная сортировка</th><th>Сортировка Шелла</th><th>Быстрая сортировка</th><th>Общее кол-во попыток</th><th>Оценка</th></tr>
@@ -38,14 +42,14 @@
         <span asp-validation-for="Password2"></span><br>
 			}
 			<tr><td>@person.Name</td><td>@person.Age</td></tr>
-			}*@
+			}
 		</tbody>
 
         <label>@ViewData["Mess"]</label><br>
         
 	</table>
 	
-</form>
+</form>*@
 
 
 

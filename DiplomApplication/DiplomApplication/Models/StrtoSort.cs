@@ -8,6 +8,10 @@ namespace DiplomApplication.Models
     {
         [Required(ErrorMessage = "Заполните строку для сортировки")]
         [Display(Name = "Строка для сортироовки:")]
-        public string str { get; set; }
-    }
+        public string strtosort { get; set; }
+		public string strstudentsort { get; set; }
+		public string Mess{ get; set; }
+		public string strprogramsort { get; set; }
+
+	}
 }

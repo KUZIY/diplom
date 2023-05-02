@@ -1,23 +1,77 @@
 ﻿@model StrtoSort
-@{
-	ViewData["Title"] = "Сортировка пузырьком";
-}
 
+<form method="post" asp-controller="Sort">
 <div class="text-center">
-	<h1 class="display-4">Сортировка пузырьком</h1>
+	<h1 class="display-4">@ViewData["Title"]</h1>
+		<label asp-for="strtosort"></label><br>
+		
+		@if (ViewData["inf"].ToString() == "CheckAlg")
+		{
+			<input asp-for="strtosort" type="text" style="width:300px" value="@ViewData["strtosort"]" />
+			<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+		}
+		else
+		{
+			<input asp-for="strtosort" readonly type="text" style="width:300px" value="@ViewData["strtosort"]" />
+			<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+		}
+		<span asp-validation-for="strtosort"></span><br>
+
+
+		@if (ViewData["Mess"] != null)
+		{
+			<input readonly type="text" style="width:300px" value="@ViewData["Mess"]" />
+		}
+
+
+		@if (ViewData["strstudentsort"] != null)
+		{
+			<textarea asp-for="strstudentsort" style="width:300px;height:75px">@ViewData["strstudentsort"]</textarea><p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+		}
+		
+		@if (ViewData["strprogramsort"] != null)
+		{
+			@*<textarea asp-for="strprogramsort" readonly style="width:300px;height:75px"> 132312 @ViewData["strprogramsort"]</textarea>*@
+			<textarea readonly style="width:300px;height:75px">@ViewData["strprogramsort"] </textarea>
+		}
+
+<br />
+	
 </div>
-<form method="post" asp-controller="Sort" asp-action="CheckBibble">
+
+	@if (ViewData["inf"].ToString() == "CheckAlg")
+	{
+		<input asp-action="GenerateStr" type="submit" style="position: fixed; bottom: 235px;right: 100px; width:300px;height:75px" value="Сгенерировать строку" />
+		<input asp-action="GetAnsTrainingTest" type="submit" style="position: fixed; bottom: 155px;right: 100px; width:300px;height:75px" value="Получить ответ" />
+	}
+	
+	@if ((ViewData["inf"].ToString() == "ControlTest") || (ViewData["inf"].ToString() == "TrainingTest"))
+	{
+		<input asp-action="CheckWork" type="submit" style="position: fixed; bottom: 155px;right: 100px; width:300px;height:75px" value="Отправить ответ" />
+	}
+	<input   asp-action="Home" type="submit" style="position: fixed; bottom: 75px;right: 100px; width:300px;height:75px" value="Вернуться на домашнюю страницу" />
+	</form>
+
+
+
+@*<form method="post" asp-controller="Sort" asp-action="CheckBibble">
 	<label asp-for="str"></label>
 	<br>
-<textarea asp-for="str"></textarea>
+<textarea asp-for="str">@ViewData["Str"]</textarea>
 	<span asp-validation-for="str"></span>
 	<br>
 	<br>
-<textarea>@ViewData["Message"]</textarea>
+<textarea>@ViewData["Str"]</textarea>
 	<br />
 	<br />
 	<input type="submit" value="Отправить ответ" />
 </form>
+*@
 
 
-
+@*form method="post" asp-controller="Sort">
+@ViewData["inf"]
+@if (ViewData["inf"].ToString() == "Сортировка пузырьком.")
+{
+	<input asp-action="Bubble" type="submit" style="position: fixed; bottom: 155px;right: 100px; width:300px;height:75px" value="Вернуться" />
+}*@

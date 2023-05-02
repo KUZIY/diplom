@@ -1,0 +1,33 @@
+﻿<div class="text-center">
+
+	<h1 class="display-4">Предупрежденеие</h1><br>
+	<p>Вы собираетесь написать контрольное тестирование на тему "@ViewData["inf"]". Если вы нажмёте кнопку продолжить вы потратите одну попытку, которая будет влиять на вашу итоговую оценку. </p>
+</div>
+<form method="post" asp-controller="Sort">
+	@if (ViewData["inf"].ToString() == "Сортировка пузырьком.")
+	{
+		<input asp-action="Bubble" type="submit" style="position: fixed; bottom: 155px;right: 100px; width:300px;height:75px" value="Вернуться" />
+	}
+	@if (ViewData["inf"].ToString() == "Сортировка выбором.")
+	{
+		<input asp-action="Selection" type="submit" style="position: fixed; bottom: 155px;right: 100px; width:300px;height:75px" value="Вернуться" />
+	}
+	@if (ViewData["inf"].ToString() == "Сортировка вставками.")
+	{
+		<input asp-action="Insertion" type="submit" style="position: fixed; bottom: 155px;right: 100px; width:300px;height:75px" value="Вернуться" />
+	}
+	@if (ViewData["inf"].ToString() == "Шейкерная сортирока.")
+	{
+		<input asp-action="Shaker" type="submit" style="position: fixed; bottom: 155px;right: 100px; width:300px;height:75px" value="Вернуться" />
+	}
+	@if (ViewData["inf"].ToString() == "Сортировка Шелла.")
+	{
+		<input asp-action="Shell" type="submit" style="position: fixed; bottom: 155px;right: 100px; width:300px;height:75px" value="Вернуться" />
+	}
+	@if (ViewData["inf"].ToString() == "Быстрая сортировка.")
+	{
+		<input asp-action="Quick" type="submit" style="position: fixed; bottom: 155px;right: 100px; width:300px;height:75px" value="Вернуться" />
+	}
+	
+	<input asp-action="ControlTest" type="submit" style="position: fixed; bottom: 75px;right: 100px; width:300px;height:75px" value="Продолжить" />
+	</form>

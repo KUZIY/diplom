@@ -85,3 +85,4 @@ C:\Users\Nikita\Pictures\diplom\DiplomApplication\DiplomApplication\bin\Debug\ne
 C:\Users\Nikita\Pictures\diplom\DiplomApplication\DiplomApplication\bin\Debug\net7.0\Microsoft.Web.Infrastructure.dll
 C:\Users\Nikita\Pictures\diplom\DiplomApplication\DiplomApplication\bin\Debug\net7.0\Microsoft.Practices.ServiceLocation.dll
 C:\Users\Nikita\Pictures\diplom\DiplomApplication\DiplomApplication\bin\Debug\net7.0\XAct.Core.PCL.dll
+C:\Users\Nikita\Pictures\diplom\DiplomApplication\DiplomApplication\obj\Debug\net7.0\scopedcss\Views\Sort\_Layout.cshtml.rz.scp.css

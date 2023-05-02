@@ -20,12 +20,16 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkVGVhY2hlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nikita/Pictures/diplom/DiplomApplication/DiplomApplication/Views/Admin/Admin.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW4uY3NodG1s
+[C:/Users/Nikita/Pictures/diplom/DiplomApplication/DiplomApplication/Views/Admin/Admin1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW4xLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Nikita/Pictures/diplom/DiplomApplication/DiplomApplication/Views/Admin/ChangePass.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2hhbmdlUGFzcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nikita/Pictures/diplom/DiplomApplication/DiplomApplication/Views/Admin/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSG9tZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Nikita/Pictures/diplom/DiplomApplication/DiplomApplication/Views/Authorization/Authorization.cshtml]
@@ -40,8 +44,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBY291bnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nikita/Pictures/diplom/DiplomApplication/DiplomApplication/Views/Home/Home.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb21lLmNzaHRtbA==
+[C:/Users/Nikita/Pictures/diplom/DiplomApplication/DiplomApplication/Views/Home/ChangePass.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDaGFuZ2VQYXNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Nikita/Pictures/diplom/DiplomApplication/DiplomApplication/Views/Home/Test.cshtml]
@@ -84,6 +88,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29ydFxUZXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Nikita/Pictures/diplom/DiplomApplication/DiplomApplication/Views/Sort/Theory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29ydFxUaGVvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nikita/Pictures/diplom/DiplomApplication/DiplomApplication/Views/Sort/Warning.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29ydFxXYXJuaW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Nikita/Pictures/diplom/DiplomApplication/DiplomApplication/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -103,3 +115,7 @@ build_metadata.AdditionalFiles.CssScope = b-jw7yvnnkz9
 [C:/Users/Nikita/Pictures/diplom/DiplomApplication/DiplomApplication/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-b6p1ch5cab
+
+[C:/Users/Nikita/Pictures/diplom/DiplomApplication/DiplomApplication/Views/Sort/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29ydFxfTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-uwp38s3tjz

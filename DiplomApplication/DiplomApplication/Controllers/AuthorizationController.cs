@@ -44,9 +44,9 @@ namespace DiplomApplication.Controllers
                 HttpContext.Response.Cookies.Append("Id", Convert.ToString(val.GetId(user.Login)));
 			//	Response.Cookies["Id"].Expires = DateTime.Now.AddDays(1);
 				if (val.CheckRole(user.Login))
-                    return Redirect("/Home/Home");
+                    return Redirect("/Home/Test");
                 else
-                    return Redirect("/Admin/Admin");
+                    return Redirect("/Admin/Home");
             }
             else
             {

@@ -15,14 +15,19 @@ namespace DiplomApplication.Controllers
 			DBContext = dBContext;
 		}
 
-		public IActionResult Admin()
+		public IActionResult Home()
         {
 			Validation val = new Validation(DBContext);
 			var userId = HttpContext.Request.Cookies["Id"];
-			if ((userId == null)||(val.CheckRole(val.GetLogin(Convert.ToInt32(userId)))))
-				return Redirect("/Authorization/Authorization");
-			else
-				return View();
+            if ((userId == null) || (val.CheckRole(val.GetLogin(Convert.ToInt32(userId)))))
+                return Redirect("/Authorization/Authorization");
+            else
+            {
+                //var list = new List<Students>();
+                //list.Add(val.GetStudent());
+				return View(val.GetStudents());
+            }
+
 		}
 
         public IActionResult ChangePass()

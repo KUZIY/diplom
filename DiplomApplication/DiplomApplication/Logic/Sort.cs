@@ -6,8 +6,8 @@
 
 		static public string BubbleSort(int[] array)
 		{
-			
-			var len = array.Length;
+
+			/*var len = array.Length;
 			string sort = "";
 			sort = sort + string.Join(" ", array) + "\n";
 			for (var i = 1; i < len; i++)
@@ -25,7 +25,30 @@
 				
 			}
 		
-			return sort;
+			return sort;*/
+			return "1";
+		}
+
+		static public string SelectionSort(int[] array)
+		{
+			return "2";
+		}
+
+		static public string InsertionSort(int[] array)
+		{
+			return "3";
+		}
+		static public string ShakerSort(int[] array)
+		{
+			return "4";
+		}
+		static public string ShellSort(int[] array)
+		{
+			return "5";
+		}
+		static public string QuickSort(int[] array)
+		{
+			return "6";
 		}
 	}
 }

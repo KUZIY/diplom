@@ -22,46 +22,100 @@ namespace DiplomApplication.Controllers
         //     _logger = logger;
         // }
 
-        public IActionResult Home()
-        {
-            var userId = HttpContext.Request.Cookies["Id"];
-            if (userId == null)
-                return Redirect("/Authorization/Authorization");
-            else
-                return View();
-        }
+       //public IActionResult Home()
+       //{
+		//Validation val = new Validation(DBContext);
+		//var userId = HttpContext.Request.Cookies["Id"];
+		//if ((userId == null) || (!val.CheckRole(val.GetLogin(Convert.ToInt32(userId)))))
+		//	return Redirect("/Authorization/Authorization");
+		//else
+       //        return View();
+       //}
 
         public IActionResult Test()
         {
-            return View();
+			if (HttpContext.Request.Cookies.ContainsKey("TypeSort"))
+			{
+				HttpContext.Response.Cookies.Delete("TypeSort");
+				if (HttpContext.Request.Cookies.ContainsKey("TypeWork"))
+				{
+					HttpContext.Response.Cookies.Delete("TypeWork");
+				}
+			}
+			Validation val = new Validation(DBContext);
+            var userId = HttpContext.Request.Cookies["Id"];
+            if ((userId == null) || !(val.CheckRole(val.GetLogin(Convert.ToInt32(userId)))))
+                return Redirect("/Authorization/Authorization");
+            else
+            {
+                //var list = new List<Students>();
+                //list.Add(val.GetStudent());
+                return View(val.GetStudentMarks(Convert.ToInt32(userId)));
+            }
+            //eturn View();
         }
-		
+        public IActionResult ChangePass()
+        {
+			Validation val = new Validation(DBContext);
+			var userId = HttpContext.Request.Cookies["Id"];
+			if ((userId == null) || (!val.CheckRole(val.GetLogin(Convert.ToInt32(userId)))))
+				return Redirect("/Authorization/Authorization");
+			else
+				return View();
+        }
 
-		public IActionResult Acount()
-		{
-			return View();
-		}
-
+        public IActionResult Acount()
+        {
+            Validation val = new Validation(DBContext);
+			var userId = HttpContext.Request.Cookies["Id"];
+			if ((userId == null) || (!val.CheckRole(val.GetLogin(Convert.ToInt32(userId)))))
+                return Redirect("/Authorization/Authorization");
+            else
+            {
+                ViewData["Login"] = val.GetLogin(Convert.ToInt32(userId));
+                ViewData["FIO"] = val.GetFIO(Convert.ToInt32(userId));
+                ViewData["Group"] = val.GetGroup(Convert.ToInt32(userId));
+                return View();
+            }
+        }
         public IActionResult ChekAcount(Users user)
         {
             Validation val = new Validation(DBContext);
+			var userId = HttpContext.Request.Cookies["Id"];
+			if ((userId == null) || (!val.CheckRole(val.GetLogin(Convert.ToInt32(userId)))))
+				return Redirect("/Authorization/Authorization");
+			var id = Convert.ToInt32(userId);
             ModelState.Clear();
-            foreach (var x in val.CheckRegistration(user))
+            foreach (var x in val.CheckAcount(user,id ))
                 ModelState.AddModelError(x.Item1, x.Item2);
             if (ModelState.IsValid)
             {
-                val.CreateUser(user, "Student");
+                val.ChangeUser(user,Convert.ToInt32(HttpContext.Request.Cookies["Id"]));
                 ViewData["Mess"] = "Внесение изменений успешно";
             }
-            else
-            {
                 ViewData["Login"] = user.Login;
                 ViewData["FIO"] = user.FIO;
-                ViewData["Group"] = user.Group;
-            }
+                ViewData["Group"] = user.Group;        
             return View("Acount");
         }
 
+        public IActionResult Checkpass(Users user)
+        {
+            Validation val = new Validation(DBContext);
+            var userId = HttpContext.Request.Cookies["Id"];
+            if ((userId == null) || !(val.CheckRole(user.Login)))
+                return Redirect("/Authorization/Authorization");
+            user.Login = val.GetLogin(Convert.ToInt32(userId));
+            ModelState.Clear();
+            foreach (var x in val.CheckChangePass(user))
+                ModelState.AddModelError(x.Item1, x.Item2);
+            if (ModelState.IsValid)
+            {
+                ViewData["Mess"] = "Пароль успешно изменён.";
+                val.ChangePass(user.Login, user.Password);
+            }
+            return View("ChangePass");
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

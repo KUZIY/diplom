@@ -145,3 +145,52 @@ button.accept-policy[b-b6p1ch5cab] {
   white-space: nowrap;
   line-height: 60px;
 }
+/* _content/DiplomApplication/Views/Sort/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-uwp38s3tjz] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-uwp38s3tjz] {
+  color: #0077cc;
+}
+
+.btn-primary[b-uwp38s3tjz] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-uwp38s3tjz], .nav-pills .show > .nav-link[b-uwp38s3tjz] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-uwp38s3tjz] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-uwp38s3tjz] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-uwp38s3tjz] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-uwp38s3tjz] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-uwp38s3tjz] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}

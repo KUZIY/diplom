@@ -1,0 +1,13 @@
+﻿
+
+
+<div class="text-center">
+
+    <h1 class="display-4">@ViewData["Title"]</h1><br>
+	<p>@ViewData["Theory"]</p>
+	</div>
+<form method="post" asp-controller="Sort">
+	<input asp-action="CheckAlg" type="submit" style="position: fixed; bottom: 235px;right: 100px; width:300px;height:75px" value="Проверить работу алгоритма" />
+	<input asp-action="TrainingTest" type="submit" style="position: fixed; bottom: 155px;right: 100px; width:300px;height:75px" value="Пройти тренировочное тестирование" />
+	<input asp-action="Warning" type="submit" style="position: fixed; bottom: 75px;right: 100px; width:300px;height:75px" value="Пройти контрольное тестирование" />
+</form>

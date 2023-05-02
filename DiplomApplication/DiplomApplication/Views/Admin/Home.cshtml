@@ -1,0 +1,68 @@
+﻿@using DiplomApplication.Models;
+@model List<Students>
+@{
+
+    ViewData["Title"] = "База данных студентов";
+
+}
+@*
+<form method="post" asp-controller="Admin" asp-action="Checkpass">
+	<pre></pre>
+	@foreach (var person in Model.People)
+	{
+	}
+	<select name="nubexSelect" multiple form="nubexForm">
+		<option>ИДБ-19-01</option>
+		<option>ИДБ-19-02</option>
+		<option>ИДБ-19-03</option>
+		<option>ИДБ-19-04</option>
+	</select>
+	<input type="submit" value="Выбрать группу" />
+	</form></br>*@
+<h1> @ViewData["Title"]</h1>
+<form method="post" asp-controller="Admin" asp-action="Checkpass">
+	@*<input type="submit" value="Сохранить изменения" />*@
+	<table class="table">
+		<thead>
+			<tr><th>ФИО</th><th>Группа</th><th>Пузырьковая сортировка</th><th>Сортировка выбором</th><th>Сортировка вставками</th><th>Шейкерная сортировка</th><th>Сортировка Шелла</th><th>Быстрая сортировка</th><th>Общее кол-во попыток</th><th>Оценка</th></tr>
+		</thead>
+		<tbody>
+
+			@foreach (var person in Model)
+			{
+				<tr>
+					@*<td>@person.FIO</td>
+					<td>@person.Group</td>
+					<td>@person.BubleMark</td>
+					<td>@person.SelectionMark</td>
+					<td>@person.InsertionMark</td>
+					<td>@person.ShakerMark</td>
+					<td>@person.ShellMark</td>
+					<td>@person.QuickMark</td>
+					<td>@person.TotalAttempts</td>
+					<td>@person.Rating</td>*@
+					<td><input type="text" value="@person.FIO" size="15"></td>
+					<td><input type="text" value="@person.Group" size="7"></td>
+					<td><input type="checkbox" checked = "@person.BubleMark"></td>
+					<td><input type="checkbox" checked="@person.SelectionMark"></td>
+					<td><input type="checkbox" checked="@person.InsertionMark"></td>
+					<td><input type="checkbox" checked="@person.ShakerMark"></td>
+					<td><input type="checkbox" checked="@person.ShellMark"></td>
+					<td><input type="checkbox" checked="@person.QuickMark"></td>
+					<td><input type="number" value="@person.TotalAttempts" size="5"></td>
+					<td><input type="number" value="@person.Rating" size="5"></td>
+					@*<td>@person.FIO</td>
+					<td><input type="text" value="@person.Group" size="7" readonly></td>
+					<td><input type="checkbox" checked="@person.BubleMark" disabled="disabled"></td>
+					<td><input type="checkbox" checked="@person.SelectionMark" disabled="disabled"></td>
+					<td><input type="checkbox" checked="@person.InsertionMark" disabled="disabled"></td>
+					<td><input type="checkbox" checked="@person.ShakerMark" disabled="disabled"></td>
+					<td><input type="checkbox" checked="@person.ShellMark" disabled="disabled"></td>
+					<td><input type="checkbox" checked="@person.QuickMark" disabled="disabled"></td>
+					<td>@person.TotalAttempts</td>
+				<td>@person.Rating</td>*@
+				</tr>
+			}
+		</tbody>
+	</table>
+</form>
