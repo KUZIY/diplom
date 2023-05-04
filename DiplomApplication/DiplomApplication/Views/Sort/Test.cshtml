@@ -1,43 +1,50 @@
 ﻿@model StrtoSort
 
 <form method="post" asp-controller="Sort">
-<div class="text-center">
+	<div class="text-center">
 	<h1 class="display-4">@ViewData["Title"]</h1>
-		<label asp-for="strtosort"></label><br>
-		
-		@if (ViewData["inf"].ToString() == "CheckAlg")
+
+			<label asp-for="strtosort"></label><br>
+			@if (ViewData["inf"].ToString() == "CheckAlg")
+			{
+
+				<input asp-for="strtosort" type="text" style="width:70%" value="@ViewData["strtosort"]" /><br />
+			}
+			else
+			{
+				<input asp-for="strtosort" readonly type="text" style="width:70%" value="@ViewData["strtosort"]" /><br />
+			}
+			@if (ViewData["strstudentsort"] != null)
+			{
+		<label>Ваше решение</label><br>
+		@if (ViewData["strstudentsort"].ToString() == "")
 		{
-			<input asp-for="strtosort" type="text" style="width:300px" value="@ViewData["strtosort"]" />
-			<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+			<textarea asp-for="strstudentsort" style="width:70%; height:30%">@ViewData["strstudentsort"]</textarea><br />
 		}
 		else
 		{
-			<input asp-for="strtosort" readonly type="text" style="width:300px" value="@ViewData["strtosort"]" />
-			<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
-		}
-		<span asp-validation-for="strtosort"></span><br>
+				<textarea asp-for="strstudentsort" readonly style="width:70%; height:30%">@ViewData["strstudentsort"]</textarea>
 
-
-		@if (ViewData["Mess"] != null)
-		{
-			<input readonly type="text" style="width:300px" value="@ViewData["Mess"]" />
+			<br />
 		}
 
+	}
 
-		@if (ViewData["strstudentsort"] != null)
-		{
-			<textarea asp-for="strstudentsort" style="width:300px;height:75px">@ViewData["strstudentsort"]</textarea><p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
-		}
-		
-		@if (ViewData["strprogramsort"] != null)
-		{
-			@*<textarea asp-for="strprogramsort" readonly style="width:300px;height:75px"> 132312 @ViewData["strprogramsort"]</textarea>*@
-			<textarea readonly style="width:300px;height:75px">@ViewData["strprogramsort"] </textarea>
-		}
 
-<br />
-	
-</div>
+			@if (ViewData["strprogramsort"] != null)
+			{
+				<label>Решение системы:</label><br>
+				@*<textarea asp-for="strprogramsort" readonly style="width:300px;height:75px"> 132312 @ViewData["strprogramsort"]</textarea>*@
+			<textarea readonly style="width:70%; height:30%">@ViewData["strprogramsort"] </textarea>
+
+			<br />
+			}
+			
+			@if (ViewData["Mess"] != null)
+			{
+				<label>Ответ системы:</label><br>
+				<input readonly type="text" style="width:70%" value="@ViewData["Mess"]" /><br />
+			}
 
 	@if (ViewData["inf"].ToString() == "CheckAlg")
 	{
@@ -50,7 +57,8 @@
 		<input asp-action="CheckWork" type="submit" style="position: fixed; bottom: 155px;right: 100px; width:300px;height:75px" value="Отправить ответ" />
 	}
 	<input   asp-action="Home" type="submit" style="position: fixed; bottom: 75px;right: 100px; width:300px;height:75px" value="Вернуться на домашнюю страницу" />
-	</form>
+	</div>
+</form>
 
 
 

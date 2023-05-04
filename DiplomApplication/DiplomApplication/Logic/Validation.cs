@@ -87,8 +87,43 @@ namespace DiplomApplication.Logic
             var x = DBContext.UsersDB.First(x => x.Login == log);//
             return x.IdUser;
         }
-
-        public string GetLogin(int Id)
+		public void AddAtemp(int Id)
+		{
+			var x = DBContext.RatingsDB.First(x => x.IdUser == Id);//
+            x.TotalAttempts++;
+			DBContext.SaveChanges();
+			return;
+		}
+        public bool? CheckControl(int Id, string typesort)
+        {
+            bool? ans = null;
+            var x = DBContext.RatingsDB.First(x => x.IdUser == Id);//
+            x.TotalAttempts++;
+            switch (typesort)
+            {
+                case "Сортировка пузырьком.":
+                    ans = x.BubleMark;
+                    break;
+                case "Сортировка выбором.":
+                    ans = x.SelectionMark;
+                    break;
+                case "Сортировка вставками.":
+                    ans = x.InsertionMark;
+                    break;
+                case "Шейкерная сортирока.":
+                    ans = x.ShakerMark;
+                        break;
+                case "Сортировка Шелла.":
+                    ans = x.ShellMark;
+                    break;
+                case "Быстрая сортировка.": 
+                    ans = x.QuickMark;
+                    break;
+            }
+            if (ans == false) ans = null;
+            return ans;
+        }
+		public string GetLogin(int Id)
         {
             var x = DBContext.UsersDB.First(x => x.IdUser == Id);//
             return x.Login;

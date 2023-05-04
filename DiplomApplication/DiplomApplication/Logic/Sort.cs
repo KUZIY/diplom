@@ -50,5 +50,30 @@
 		{
 			return "6";
 		}
+		static public string SortPoAlg(int[] array, string typesort)
+		{
+			switch (typesort)
+			{
+				case "Сортировка пузырьком.": return BubbleSort(array);
+				case "Сортировка выбором.": return SelectionSort(array);
+				case "Сортировка вставками.": return InsertionSort(array);
+				case "Шейкерная сортирока.": return ShakerSort(array);
+				case "Сортировка Шелла.": return ShellSort(array);
+				case "Быстрая сортировка.":return QuickSort(array);
+					default: return "Произошла низвестная ошибка";
+			}
+		}
+		//static public string MessPoCheckSort(string strstudentsort, string strprogramsort, string typework)
+		//{
+		//	string ans;
+		//
+		//	return ans;
+		//}
+		static public string GetStrToSort()
+		{
+			string str;
+			str = "123 432 123";
+			return str;
+		}
 	}
 }
