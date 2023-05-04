@@ -20,10 +20,6 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkVGVhY2hlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nikita/Pictures/diplom/DiplomApplication/DiplomApplication/Views/Admin/Admin1.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW4xLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Nikita/Pictures/diplom/DiplomApplication/DiplomApplication/Views/Admin/ChangePass.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2hhbmdlUGFzcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -58,30 +54,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Nikita/Pictures/diplom/DiplomApplication/DiplomApplication/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Nikita/Pictures/diplom/DiplomApplication/DiplomApplication/Views/Sort/Bubble.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29ydFxCdWJibGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Nikita/Pictures/diplom/DiplomApplication/DiplomApplication/Views/Sort/Insertion.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29ydFxJbnNlcnRpb24uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Nikita/Pictures/diplom/DiplomApplication/DiplomApplication/Views/Sort/Quick.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29ydFxRdWljay5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Nikita/Pictures/diplom/DiplomApplication/DiplomApplication/Views/Sort/Selection.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29ydFxTZWxlY3Rpb24uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Nikita/Pictures/diplom/DiplomApplication/DiplomApplication/Views/Sort/Shaker.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29ydFxTaGFrZXIuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Nikita/Pictures/diplom/DiplomApplication/DiplomApplication/Views/Sort/Shell.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29ydFxTaGVsbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Nikita/Pictures/diplom/DiplomApplication/DiplomApplication/Views/Sort/Test.cshtml]

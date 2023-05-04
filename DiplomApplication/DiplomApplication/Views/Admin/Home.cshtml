@@ -41,7 +41,7 @@
 					<td>@person.QuickMark</td>
 					<td>@person.TotalAttempts</td>
 					<td>@person.Rating</td>*@
-					<td><input type="text" value="@person.FIO" size="15"></td>
+					@*<td><input type="text" value="@person.FIO" size="15"></td>
 					<td><input type="text" value="@person.Group" size="7"></td>
 					<td><input type="checkbox" checked = "@person.BubleMark"></td>
 					<td><input type="checkbox" checked="@person.SelectionMark"></td>
@@ -50,8 +50,8 @@
 					<td><input type="checkbox" checked="@person.ShellMark"></td>
 					<td><input type="checkbox" checked="@person.QuickMark"></td>
 					<td><input type="number" value="@person.TotalAttempts" size="5"></td>
-					<td><input type="number" value="@person.Rating" size="5"></td>
-					@*<td>@person.FIO</td>
+					<td><input type="number" value="@person.Rating" size="5"></td>*@
+					<td>@person.FIO</td>
 					<td><input type="text" value="@person.Group" size="7" readonly></td>
 					<td><input type="checkbox" checked="@person.BubleMark" disabled="disabled"></td>
 					<td><input type="checkbox" checked="@person.SelectionMark" disabled="disabled"></td>
@@ -60,7 +60,7 @@
 					<td><input type="checkbox" checked="@person.ShellMark" disabled="disabled"></td>
 					<td><input type="checkbox" checked="@person.QuickMark" disabled="disabled"></td>
 					<td>@person.TotalAttempts</td>
-				<td>@person.Rating</td>*@
+				<td>@person.Rating</td>
 				</tr>
 			}
 		</tbody>

@@ -56,6 +56,7 @@ namespace DiplomApplication.Controllers
 				HttpContext.Response.Cookies.Append("TypeSort", str);
 				ViewData["Title"] = str;
 				ViewData["Theory"] = "Cортировка пузырьком является одним из самых простых методов сортировки. Он проходит по массиву многократно, сравнивая пары соседних элементов и меняя их местами, если они находятся в неправильном порядке. Этот процесс повторяется до тех пор, пока массив не будет отсортирован. Ключевой недостаток этого метода заключается в том, что он имеет квадратичную сложность O(n^2)";
+				ViewData["Control"] = val.CheckControl(Convert.ToInt32(userId), str);
 				return View("Theory");
 			}
 			else
@@ -77,6 +78,7 @@ namespace DiplomApplication.Controllers
 				HttpContext.Response.Cookies.Append("TypeSort", str);
 				ViewData["Title"] = str;
 				ViewData["Theory"] = "Cортировка пузырьком является одним из самых простых методов сортировки. Он проходит по массиву многократно, сравнивая пары соседних элементов и меняя их местами, если они находятся в неправильном порядке. Этот процесс повторяется до тех пор, пока массив не будет отсортирован. Ключевой недостаток этого метода заключается в том, что он имеет квадратичную сложность O(n^2)";
+				ViewData["Control"] = val.CheckControl(Convert.ToInt32(userId), str);
 				return View("Theory");
 			}
 			else
@@ -97,6 +99,7 @@ namespace DiplomApplication.Controllers
 				HttpContext.Response.Cookies.Append("TypeSort", str);
 				ViewData["Title"] = str;
 				ViewData["Theory"] = "Cортировка пузырьком является одним из самых простых методов сортировки. Он проходит по массиву многократно, сравнивая пары соседних элементов и меняя их местами, если они находятся в неправильном порядке. Этот процесс повторяется до тех пор, пока массив не будет отсортирован. Ключевой недостаток этого метода заключается в том, что он имеет квадратичную сложность O(n^2)";
+				ViewData["Control"] = val.CheckControl(Convert.ToInt32(userId), str);
 				return View("Theory");
 			}
 			else
@@ -118,43 +121,34 @@ namespace DiplomApplication.Controllers
 				HttpContext.Response.Cookies.Append("TypeSort", str);
 				ViewData["Title"] = str;
 				ViewData["Theory"] = "Cортировка пузырьком является одним из самых простых методов сортировки. Он проходит по массиву многократно, сравнивая пары соседних элементов и меняя их местами, если они находятся в неправильном порядке. Этот процесс повторяется до тех пор, пока массив не будет отсортирован. Ключевой недостаток этого метода заключается в том, что он имеет квадратичную сложность O(n^2)";
+				ViewData["Control"] = val.CheckControl(Convert.ToInt32(userId), str);
 				return View("Theory");
 			}
 			else
 				return Redirect("/Authorization/Authorization");
 		}
-	
 
-	public IActionResult Quick()
-	{
-		var userId = HttpContext.Request.Cookies["Id"];
-		Validation val = new Validation(DBContext);
-		if ((userId != null) || (val.CheckRole(val.GetLogin(Convert.ToInt32(userId)))))
+
+		public IActionResult Quick()
 		{
-			string str = "Быстрая сортировка.";
-			if (HttpContext.Request.Cookies.ContainsKey("TypeWork"))
+			var userId = HttpContext.Request.Cookies["Id"];
+			Validation val = new Validation(DBContext);
+			if ((userId != null) || (val.CheckRole(val.GetLogin(Convert.ToInt32(userId)))))
 			{
-				HttpContext.Response.Cookies.Delete("TypeWork");
+				string str = "Быстрая сортировка.";
+				if (HttpContext.Request.Cookies.ContainsKey("TypeWork"))
+				{
+					HttpContext.Response.Cookies.Delete("TypeWork");
+				}
+				HttpContext.Response.Cookies.Append("TypeSort", str);
+				ViewData["Title"] = str;
+				ViewData["Theory"] = "Cортировка пузырьком является одним из самых простых методов сортировки. Он проходит по массиву многократно, сравнивая пары соседних элементов и меняя их местами, если они находятся в неправильном порядке. Этот процесс повторяется до тех пор, пока массив не будет отсортирован. Ключевой недостаток этого метода заключается в том, что он имеет квадратичную сложность O(n^2)";
+				ViewData["Control"] = val.CheckControl(Convert.ToInt32(userId), str);
+				return View("Theory");
 			}
-			HttpContext.Response.Cookies.Append("TypeSort", str);
-			ViewData["Title"] = str;
-			ViewData["Theory"] = "Cортировка пузырьком является одним из самых простых методов сортировки. Он проходит по массиву многократно, сравнивая пары соседних элементов и меняя их местами, если они находятся в неправильном порядке. Этот процесс повторяется до тех пор, пока массив не будет отсортирован. Ключевой недостаток этого метода заключается в том, что он имеет квадратичную сложность O(n^2)";
-			return View("Theory");
+			else
+				return Redirect("/Authorization/Authorization");
 		}
-		else
-			return Redirect("/Authorization/Authorization");
-	}
-        //public IActionResult Theory()
-        //{
-        //	ViewData["Message"] = "Здесь будет строка после сортировки";
-        //	return View();
-        //}
-        //public IActionResult Test()
-        //{
-        //	ViewData["Message"] = "Здесь будет строка после сортировки";
-        //	return View();
-        //}
-
         public IActionResult CheckAlg()
         {
             HttpContext.Response.Cookies.Append("TypeWork", "CheckAlg");
@@ -221,7 +215,7 @@ namespace DiplomApplication.Controllers
 			//Нужна проверочка на то что ввевли
 				string[] element = form.strtosort.Split(new char[] { ' ' });
 				int[] ints = element.Select(int.Parse).ToArray();
-				ViewData["strprogramsort"] = Sort.SortPoAlg(ints, HttpContext.Request.Cookies["TypeSort"]);// из куки достать алгоритм
+				ViewData["strprogramsort"] = Sort.SortPoAlg(ints, HttpContext.Request.Cookies["TypeSort"]);
 			ViewData["strtosort"] = form.strtosort;
 				
 			ViewData["inf"] = "CheckAlg";
@@ -232,109 +226,5 @@ namespace DiplomApplication.Controllers
 		{
 			return Redirect("/Home/Test");
 		}
-
-		//[HttpPost]
-		//public IActionResult CheckBibble(StrtoSort st)
-		//{
-		//	
-		//	if (ModelState.IsValid)
-		//    {
-		//        string[] element = st.str.Split(new char[] { ' ' });
-		//		int[] ints = element.Select(int.Parse).ToArray();
-		//        ViewData["Message"] = Sort.BubbleSort(ints);
-		//		return View("Bubble");
-		//	}
-		//    else
-		//    {
-		//        return View("Bubble");
-		//    }
-		//}
-
-		//[HttpPost]
-		//public IActionResult CheckSelection(StrtoSort st)
-		//{
-		//
-		//    if (ModelState.IsValid)
-		//    {
-		//        string[] element = st.str.Split(new char[] { ' ' });
-		//        int[] ints = element.Select(int.Parse).ToArray();
-		//        ViewData["Message"] = Sort.BubbleSort(ints);
-		//        return View("Bubble");
-		//    }
-		//    else
-		//    {
-		//        return View("Bubble");
-		//    }
-		//}
-		//
-		//[HttpPost]
-		//public IActionResult CheckInsertion(StrtoSort st)
-		//{
-		//
-		//    if (ModelState.IsValid)
-		//    {
-		//        string[] element = st.str.Split(new char[] { ' ' });
-		//        int[] ints = element.Select(int.Parse).ToArray();
-		//        ViewData["Message"] = Sort.BubbleSort(ints);
-		//        return View("Bubble");
-		//    }
-		//    else
-		//    {
-		//        return View("Bubble");
-		//    }
-		//}
-		//
-		//[HttpPost]
-		//public IActionResult CheckShaker(StrtoSort st)
-		//{
-		//
-		//    if (ModelState.IsValid)
-		//    {
-		//        string[] element = st.str.Split(new char[] { ' ' });
-		//        int[] ints = element.Select(int.Parse).ToArray();
-		//        ViewData["Message"] = Sort.BubbleSort(ints);
-		//        return View("Bubble");
-		//    }
-		//    else
-		//    {
-		//        return View("Bubble");
-		//    }
-		//}
-		//
-		//[HttpPost]
-		//public IActionResult CheckShell(StrtoSort st)
-		//{
-		//
-		//    if (ModelState.IsValid)
-		//    {
-		//        string[] element = st.str.Split(new char[] { ' ' });
-		//        int[] ints = element.Select(int.Parse).ToArray();
-		//        ViewData["Message"] = Sort.BubbleSort(ints);
-		//        return View("Bubble");
-		//    }
-		//    else
-		//    {
-		//        return View("Bubble");
-		//    }
-		//}
-		//
-		//[HttpPost]
-		//public IActionResult CheckQuick(StrtoSort st)
-		//{
-		//
-		//    if (ModelState.IsValid)
-		//    {
-		//        string[] element = st.str.Split(new char[] { ' ' });
-		//        int[] ints = element.Select(int.Parse).ToArray();
-		//        ViewData["Message"] = Sort.BubbleSort(ints);
-		//        return View("Bubble");
-		//    }
-		//    else
-		//    {
-		//        return View("Bubble");
-		//    }
-		//}
-
-
 	}
 } 
