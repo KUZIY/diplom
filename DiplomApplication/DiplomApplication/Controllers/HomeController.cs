@@ -22,16 +22,6 @@ namespace DiplomApplication.Controllers
         //     _logger = logger;
         // }
 
-       //public IActionResult Home()
-       //{
-		//Validation val = new Validation(DBContext);
-		//var userId = HttpContext.Request.Cookies["Id"];
-		//if ((userId == null) || (!val.CheckRole(val.GetLogin(Convert.ToInt32(userId)))))
-		//	return Redirect("/Authorization/Authorization");
-		//else
-       //        return View();
-       //}
-
         public IActionResult Test()
         {
 			if (HttpContext.Request.Cookies.ContainsKey("TypeSort"))
@@ -48,11 +38,8 @@ namespace DiplomApplication.Controllers
                 return Redirect("/Authorization/Authorization");
             else
             {
-                //var list = new List<Students>();
-                //list.Add(val.GetStudent());
                 return View(val.GetStudentMarks(Convert.ToInt32(userId)));
             }
-            //eturn View();
         }
         public IActionResult ChangePass()
         {

@@ -32,7 +32,7 @@ namespace DiplomApplication.Controllers
 				}
 				HttpContext.Response.Cookies.Append("TypeSort", str);
 				ViewData["Title"] = str;
-				ViewData["Theory"] = "Cортировка пузырьком является одним из самых простых методов сортировки. Он проходит по массиву многократно, сравнивая пары соседних элементов и меняя их местами, если они находятся в неправильном порядке. Этот процесс повторяется до тех пор, пока массив не будет отсортирован. Ключевой недостаток этого метода заключается в том, что он имеет квадратичную сложность O(n^2)";
+				ViewData["Theory"] = "Сортировка пузырьком является одним из самых простых методов сортировки. Алгоритм считается учебным и практически не применяется вне учебной литературы, вместо него на практике применяются более эффективные алгоритмы сортировки. В то же время метод сортировки обменами лежит в основе некоторых более совершенных алгоритмов. Он проходит по массиву многократно, сравнивая пары соседних элементов и меняя их местами, если они находятся в неправильном порядке. Этот процесс повторяется до тех пор, пока массив не будет отсортирован. ";
 				ViewData["Control"] = val.CheckControl(Convert.ToInt32(userId), str);
 				return View("Theory");
 			}
@@ -55,7 +55,7 @@ namespace DiplomApplication.Controllers
 				}
 				HttpContext.Response.Cookies.Append("TypeSort", str);
 				ViewData["Title"] = str;
-				ViewData["Theory"] = "Cортировка пузырьком является одним из самых простых методов сортировки. Он проходит по массиву многократно, сравнивая пары соседних элементов и меняя их местами, если они находятся в неправильном порядке. Этот процесс повторяется до тех пор, пока массив не будет отсортирован. Ключевой недостаток этого метода заключается в том, что он имеет квадратичную сложность O(n^2)";
+				ViewData["Theory"] = "Сортировка выбором также является простым методом сортировки. Он находит минимальный элемент в массиве и меняет его местами с первым элементом в массиве. Затем он находит следующий минимальный элемент и меняет его местами со вторым элементом в массиве. Этот процесс повторяется до тех пор, пока все элементы не будут отсортированы.";
 				ViewData["Control"] = val.CheckControl(Convert.ToInt32(userId), str);
 				return View("Theory");
 			}
@@ -77,7 +77,7 @@ namespace DiplomApplication.Controllers
 				}
 				HttpContext.Response.Cookies.Append("TypeSort", str);
 				ViewData["Title"] = str;
-				ViewData["Theory"] = "Cортировка пузырьком является одним из самых простых методов сортировки. Он проходит по массиву многократно, сравнивая пары соседних элементов и меняя их местами, если они находятся в неправильном порядке. Этот процесс повторяется до тех пор, пока массив не будет отсортирован. Ключевой недостаток этого метода заключается в том, что он имеет квадратичную сложность O(n^2)";
+				ViewData["Theory"] = "Сортировка вставками является простым и эффективным методом сортировки, особенно для небольших массивов. Он проходит по массиву по одному элементу и вставляет его в отсортированную часть массива, находя для него правильную позицию. Это повторяется до тех пор, пока все элементы не будут отсортированы.";
 				ViewData["Control"] = val.CheckControl(Convert.ToInt32(userId), str);
 				return View("Theory");
 			}
@@ -91,14 +91,14 @@ namespace DiplomApplication.Controllers
 			Validation val = new Validation(DBContext);
 			if ((userId != null) || (val.CheckRole(val.GetLogin(Convert.ToInt32(userId)))))
 			{
-				string str = "Шейкерная сортирока.";
+				string str = "Шейкерная сортировка.";
 				if (HttpContext.Request.Cookies.ContainsKey("TypeWork"))
 				{
 					HttpContext.Response.Cookies.Delete("TypeWork");
 				}
 				HttpContext.Response.Cookies.Append("TypeSort", str);
 				ViewData["Title"] = str;
-				ViewData["Theory"] = "Cортировка пузырьком является одним из самых простых методов сортировки. Он проходит по массиву многократно, сравнивая пары соседних элементов и меняя их местами, если они находятся в неправильном порядке. Этот процесс повторяется до тех пор, пока массив не будет отсортирован. Ключевой недостаток этого метода заключается в том, что он имеет квадратичную сложность O(n^2)";
+				ViewData["Theory"] = "Шейкерная сортировка является вариантом сортировки пузырьком, который двигается в обоих направлениях по массиву, сравнивая и меняя элементы, как в сортировке пузырьком. Однако, в отличие от сортировки пузырьком, шейкерная сортировка двигается не только в одном направлении, но и в обратном направлении. Это позволяет \"выталкивать\" большие элементы в конец массива, а маленькие - в начало. Это может ускорить процесс сортировки, особенно когда есть много элементов, которые нужно перемещать.";
 				ViewData["Control"] = val.CheckControl(Convert.ToInt32(userId), str);
 				return View("Theory");
 			}
@@ -120,7 +120,7 @@ namespace DiplomApplication.Controllers
 				}
 				HttpContext.Response.Cookies.Append("TypeSort", str);
 				ViewData["Title"] = str;
-				ViewData["Theory"] = "Cортировка пузырьком является одним из самых простых методов сортировки. Он проходит по массиву многократно, сравнивая пары соседних элементов и меняя их местами, если они находятся в неправильном порядке. Этот процесс повторяется до тех пор, пока массив не будет отсортирован. Ключевой недостаток этого метода заключается в том, что он имеет квадратичную сложность O(n^2)";
+				ViewData["Theory"] = "Сортировка Шелла является улучшенной версией сортировки вставками. Он сначала разбивает массив на несколько подмассивов, сортирует каждый из них отдельно, а затем объединяет их вместе. Этот метод использует несколько последовательностей смещения, чтобы ускорить сортировку вставками. Хотя сортировка Шелла не является самой быстрой сортировкой, она имеет лучшую производительность, чем сортировка пузырьком, сортировка выбором или сортировка вставками.";
 				ViewData["Control"] = val.CheckControl(Convert.ToInt32(userId), str);
 				return View("Theory");
 			}
@@ -142,7 +142,7 @@ namespace DiplomApplication.Controllers
 				}
 				HttpContext.Response.Cookies.Append("TypeSort", str);
 				ViewData["Title"] = str;
-				ViewData["Theory"] = "Cортировка пузырьком является одним из самых простых методов сортировки. Он проходит по массиву многократно, сравнивая пары соседних элементов и меняя их местами, если они находятся в неправильном порядке. Этот процесс повторяется до тех пор, пока массив не будет отсортирован. Ключевой недостаток этого метода заключается в том, что он имеет квадратичную сложность O(n^2)";
+				ViewData["Theory"] = "Быстрая сортировка является одним из самых популярных и эффективных методов сортировки. Он выбирает опорный элемент в массиве и разбивает массив на две части, одна содержит элементы, которые меньше опорного элемента, а другая - элементы, которые больше опорного элемента. Затем он рекурсивно повторяет этот процесс для каждой из частей массива до тех пор, пока массив не будет отсортирован полностью. Быстрая сортировка имеет лучшую среднюю производительность, чем сортировка пузырьком, сортировка вставками или сортировка выбором.";
 				ViewData["Control"] = val.CheckControl(Convert.ToInt32(userId), str);
 				return View("Theory");
 			}
@@ -198,21 +198,23 @@ namespace DiplomApplication.Controllers
 		{
 			//Нужна проверочка на то что ввевли
 			string[] element = form.strtosort.Split(new char[] { ' ' });
-			int[] ints = element.Select(int.Parse).ToArray();													  //Проврека на ввод 
-			string strprogramsort = Sort.SortPoAlg(ints, HttpContext.Request.Cookies["TypeSort"]);				  //Генерация сообщений
-																												  //проверка правильности работы студента
-			ViewData["inf"] = "Result";																			  //Выставленеие оценок
-			ViewData["Title"] = HttpContext.Request.Cookies["TypeSort"];										  //
-			ViewData["strtosort"] = form.strtosort;																  //
-			ViewData["strstudentsort"] = form.strstudentsort;													  //
-			ViewData["Mess"] = "pfukeirf yt ghblevfk"; // генерация сообщения									  //
-			ViewData["strprogramsort"] = strprogramsort;														  //
-			return View("Test");																				  //
-																												  //
+			int[] ints = element.Select(int.Parse).ToArray();												
+			string strprogramsort = Sort.SortPoAlg(ints, HttpContext.Request.Cookies["TypeSort"]);           
+			Validation val = new Validation(DBContext);
+			var userId = HttpContext.Request.Cookies["Id"];													
+			ViewData["inf"] = "Result";																		
+			ViewData["Title"] = HttpContext.Request.Cookies["TypeSort"];									
+			ViewData["strtosort"] = form.strtosort;															
+			ViewData["strstudentsort"] = form.strstudentsort;												
+			ViewData["Mess"] = val.CheckWork(Convert.ToInt32(userId), form.strstudentsort, strprogramsort, HttpContext.Request.Cookies["TypeWork"], HttpContext.Request.Cookies["TypeSort"]); 
+			ViewData["strprogramsort"] = strprogramsort;													
+			return View("Test");																			
+																											
 		}
 		public IActionResult GetAnsTrainingTest (StrtoSort form)
         {
 			//Нужна проверочка на то что ввевли
+
 				string[] element = form.strtosort.Split(new char[] { ' ' });
 				int[] ints = element.Select(int.Parse).ToArray();
 				ViewData["strprogramsort"] = Sort.SortPoAlg(ints, HttpContext.Request.Cookies["TypeSort"]);

@@ -1,9 +1,9 @@
 ﻿@model Students 
 @{;
-    ViewData["Title"] = "Контрольные работы";
+    ViewData["Title"] = "Домашняя страница";
 }
 <h1>@ViewData["Title"]</h1>
-<p>Правила оценивания: тект </p>
+<p>Правила оценивания: при расчёте оценки учитывается каждая ваша попытка прохождения контрольной работы. Максимальный балл - 54. Минимальный балл - 25. Итоговая оценка считается путём деления макисимального балла на общее количество попыток и умножение на количество сортировок </p>
 <p>Общее количество попыток: @Model.TotalAttempts </p>
 <p>Итоговая оценка: @Model.Rating</p>
 <a class="nav-link text-dark" asp-area="" asp-controller="Sort" asp-action="Bubble"><h4>Сортировка пузырьком.<input type="checkbox" checked="@Model.BubleMark" disabled="disabled"></a>

@@ -23,8 +23,6 @@ namespace DiplomApplication.Controllers
                 return Redirect("/Authorization/Authorization");
             else
             {
-                //var list = new List<Students>();
-                //list.Add(val.GetStudent());
 				return View(val.GetStudents());
             }
 

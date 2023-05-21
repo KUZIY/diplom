@@ -6,7 +6,6 @@
 }
 
 <div class="text-center">
-
     <h1 class="display-4">Авторизация</h1><br>
     <form method="post" asp-controller="Authorization" asp-action="CheckAuthorization">
         <label>Введите логин:</label><br>
@@ -15,7 +14,6 @@
         <label>Введите пароль:</label><br>
         <input type="password" asp-for="Password" /><br>
 		<span asp-validation-for="Password"></span><br><br>
-
         <input type="submit" value="Войти"/>
     </form><br><br>
     <p>Если у вас нет акаунта пройдите <a asp-area="" asp-controller="Authorization" asp-action="Registration">регистрацию</a>.</p>

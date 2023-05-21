@@ -87,6 +87,52 @@ namespace DiplomApplication.Logic
             var x = DBContext.UsersDB.First(x => x.Login == log);//
             return x.IdUser;
         }
+		public void AddRaitSort(int Id, string typesort)
+		{
+			var x = DBContext.RatingsDB.First(x => x.IdUser == Id);//
+			switch (typesort)
+			{
+				case "Сортировка пузырьком.":
+					x.BubleMark = true;
+					break;
+				case "Сортировка выбором.":
+					x.SelectionMark = true;
+					break;
+				case "Сортировка вставками.":
+					x.InsertionMark = true;
+					break;
+				case "Шейкерная сортировка.":
+					x.ShakerMark = true;
+					break;
+				case "Сортировка Шелла.":
+					x.ShellMark = true;
+					break;
+				case "Быстрая сортировка.":
+					x.QuickMark = true;
+					break;
+			}
+			DBContext.SaveChanges();
+			return;
+		}
+        public bool CheckAllWorks(int Id)
+        {
+            bool ans = false;
+            var x = DBContext.RatingsDB.First(x => x.IdUser == Id);
+            if ((x.BubleMark == true) && (x.SelectionMark == true) && (x.InsertionMark == true) && (x.ShakerMark == true) && (x.ShellMark == true) && (x.QuickMark == true))
+                ans = true;
+            return ans;
+        }
+		public void AddRaiting(int Id)
+		{
+			var x = DBContext.RatingsDB.First(x => x.IdUser == Id);//
+            x.Rating = 54 / x.TotalAttempts * 6;
+			if (x.Rating < 25)
+			{
+				x.Rating = 25;
+			}
+			DBContext.SaveChanges();
+			return;
+		}
 		public void AddAtemp(int Id)
 		{
 			var x = DBContext.RatingsDB.First(x => x.IdUser == Id);//
@@ -110,7 +156,7 @@ namespace DiplomApplication.Logic
                 case "Сортировка вставками.":
                     ans = x.InsertionMark;
                     break;
-                case "Шейкерная сортирока.":
+                case "Шейкерная сортировка.":
                     ans = x.ShakerMark;
                         break;
                 case "Сортировка Шелла.":
@@ -149,7 +195,29 @@ namespace DiplomApplication.Logic
             DBContext.SaveChanges();
             return Ans;
         }
-        public bool CreateUser(Users user, string role)
+		public string CheckWork(int id, string strStudent, string strProgram, string typeWork,string typeSort  )
+		{
+            string Mes;
+			bool Ans = false;
+            if (Sort.CheckSort(strStudent, strProgram))
+            {
+                Ans = true;
+                Mes = "Работа решена верно.";
+            }
+            else
+            {
+                Mes = "Работа решена не верно.";
+            }
+            if ((typeWork == "ControlTest") && (Ans))
+            {
+                AddRaitSort(id, typeSort);
+                if (CheckAllWorks(id))
+                    AddRaiting(id);
+                Mes = Mes + " За контрольно тестирование выставлен зачёт.";
+            }
+			return Mes;
+		}
+		public bool CreateUser(Users user, string role)
         {
             bool Ans = true;
             try

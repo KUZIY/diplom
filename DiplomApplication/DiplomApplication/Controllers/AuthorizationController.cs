@@ -31,10 +31,10 @@ namespace DiplomApplication.Controllers
         [HttpPost]
         public IActionResult CheckAuthorization(Users user)
         {
-            if(HttpContext.Request.Cookies.ContainsKey("Id"))
+            if (HttpContext.Request.Cookies.ContainsKey("Id"))
             {
-				HttpContext.Response.Cookies.Delete("Id");
-			}
+                HttpContext.Response.Cookies.Delete("Id");
+            }
             Validation val = new Validation(DBContext);
             ModelState.Clear();
             foreach (var x in val.CheckAuthorization(user))
@@ -42,8 +42,8 @@ namespace DiplomApplication.Controllers
             if (ModelState.IsValid)
             {
                 HttpContext.Response.Cookies.Append("Id", Convert.ToString(val.GetId(user.Login)));
-			//	Response.Cookies["Id"].Expires = DateTime.Now.AddDays(1);
-				if (val.CheckRole(user.Login))
+                //	Response.Cookies["Id"].Expires = DateTime.Now.AddDays(1);
+                if (val.CheckRole(user.Login))
                     return Redirect("/Home/Test");
                 else
                     return Redirect("/Admin/Home");
@@ -53,21 +53,7 @@ namespace DiplomApplication.Controllers
                 ViewData["Login"] = user.Login;
                 return View("Authorization");
             }
-                //       ModelState.AddModelError(x.Item1, x.Item2);
-                //   if (!ModelState.IsValid)
-                //   {
-                //       return View("Authorization");
-                //   }
-                //       if (!val.CheckPassword(user.Login, user.Password))
-                //   {
-                //       ModelState.AddModelError("Password", "Логин или пароль не правильный.");
-                //       return View("Authorization");
-                //   }
-                //       if (user.Login == "admin")
-                //           return Redirect("/Admin/Admin");
-                //       else
-                //           return Redirect("/Home/Home");
-            }
+        }
 
         [HttpPost]
         public IActionResult CheckRegistration(Users user)

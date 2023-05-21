@@ -12,9 +12,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Admin\Admin1.cshtml" />
     <Content Remove="Views\Authorization\Index.cshtml" />
     <Content Remove="Views\Home\Home.cshtml" />
     <Content Remove="Views\Home\Index.cshtml" />
+    <Content Remove="Views\Sort\Bubble.cshtml" />
+    <Content Remove="Views\Sort\Insertion.cshtml" />
+    <Content Remove="Views\Sort\Quick.cshtml" />
+    <Content Remove="Views\Sort\Selection.cshtml" />
+    <Content Remove="Views\Sort\Shaker.cshtml" />
+    <Content Remove="Views\Sort\Shell.cshtml" />
     <Content Remove="Views\Sort\Test.razor" />
   </ItemGroup>
 

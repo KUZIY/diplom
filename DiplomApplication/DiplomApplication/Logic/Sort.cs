@@ -2,14 +2,11 @@
 {
 	static public class Sort
 	{
-
-
 		static public string BubbleSort(int[] array)
 		{
 
-			/*var len = array.Length;
-			string sort = "";
-			sort = sort + string.Join(" ", array) + "\n";
+			var len = array.Length;
+			string sort = string.Join(" ", array) + "\n";
 			for (var i = 1; i < len; i++)
 			{
 				for (var j = 0; j < len - i; j++)
@@ -25,8 +22,7 @@
 				
 			}
 		
-			return sort;*/
-			return "1";
+			return sort;
 		}
 
 		static public string SelectionSort(int[] array)
@@ -57,22 +53,30 @@
 				case "Сортировка пузырьком.": return BubbleSort(array);
 				case "Сортировка выбором.": return SelectionSort(array);
 				case "Сортировка вставками.": return InsertionSort(array);
-				case "Шейкерная сортирока.": return ShakerSort(array);
+				case "Шейкерная сортировка.": return ShakerSort(array);
 				case "Сортировка Шелла.": return ShellSort(array);
 				case "Быстрая сортировка.":return QuickSort(array);
 					default: return "Произошла низвестная ошибка";
 			}
 		}
-		//static public string MessPoCheckSort(string strstudentsort, string strprogramsort, string typework)
-		//{
-		//	string ans;
-		//
-		//	return ans;
-		//}
-		static public string GetStrToSort()
+		static public bool CheckSort(string strStudent, string strProgram)
 		{
-			string str;
-			str = "123 432 123";
+			return true;
+		}
+
+		static public string GetStrToSort(int i = 6)
+		{
+			string str = "";
+			Random rnd = new Random();
+			int value;
+			for (var x = 0; x < i; x++)
+			{
+				value = rnd.Next(-99, 99);
+				if (x == i - 1)
+					str = str + value;
+				else
+					str = str + value + " ";
+			}
 			return str;
 		}
 	}

@@ -6,7 +6,6 @@
 }
 
 <div class="text-center">
-
     <h1 class="display-4">Регистрация нового преподавателя</h1><br>
         <form method="post" asp-controller="Admin" asp-action="CheckAddTeacher">
         <label asp-for="Login"></label><br>
@@ -24,7 +23,4 @@
 		<label>@ViewData["Mess"]</label><br>
         <input type="submit" value="Зарегистрировать" />
     </form>
-
-    
-
 </div>
